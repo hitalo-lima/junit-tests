@@ -25,6 +25,7 @@ buildNumber.properties
 .project
 .settings/
 .vscode/
+.github/copilot-instructions.md
 
 ### OS files
 .DS_Store
