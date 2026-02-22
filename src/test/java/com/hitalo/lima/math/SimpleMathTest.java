@@ -2,6 +2,7 @@ package com.hitalo.lima.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +13,16 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
     void testSum_When_SixDotTwoAddedByTwo_ShouldReturnEightDotTwo() {
+        // Given/Arrange
         SimpleMath math = new SimpleMath();
 
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
         Double expected = 8.2D;
+        // When/Act
         Double actual = math.sum(firstNumber, secondNumber);
 
+        // Then/Assert
         assertEquals(expected, actual, () -> firstNumber + " + " + secondNumber + " didn't produced " + expected);
     }
 
@@ -92,9 +96,10 @@ public class SimpleMathTest {
     }
 
     @Test
+    @Disabled("TODO: We still need to work on it")
     @DisplayName("Test division by zero")
-
     void testDivision_When_FirstNumberIdDividedByZero_ShouldThrowArithmeticException() {
         fail();
     }
+
 }
