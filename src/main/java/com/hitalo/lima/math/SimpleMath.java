@@ -13,7 +13,10 @@ public class SimpleMath {
         return firstNumber * secondNumber;
     }
 
-    public Double division(Double firstNumber, Double secondNumber) {
+    public Double division(Double firstNumber, Double secondNumber) throws ArithmeticException {
+        if (secondNumber == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
         return firstNumber / secondNumber;
     }
 

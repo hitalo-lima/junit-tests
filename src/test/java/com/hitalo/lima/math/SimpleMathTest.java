@@ -3,7 +3,6 @@ package com.hitalo.lima.math;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +36,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 - 2 = 4.2")
 
-    void testSubtraction() {
+    void testSubtraction_When_SixDotTwoSubtractedByTwo_ShouldReturnFourDotTwo() {
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
         Double expected = 4.2D;
@@ -50,7 +49,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 * 2 = 12.4")
 
-    void testMultiplication() {
+    void testMultiplication_When_SixDotTwoMultipliedByTwo_ShouldReturnTwelveDotFour() {
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
         Double expected = 12.4D;
@@ -63,7 +62,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 / 2 = 3.1")
 
-    void testDivision() {
+    void testDivision_When_SixDotTwoDividedByTwo_ShouldReturnThreeDotOne() {
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
         Double expected = 3.1D;
@@ -76,7 +75,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test (6.2 + 2)/2 = 4.1")
 
-    void testMean() {
+    void testMean_When_SixDotTwoAddedByTwoAndDividedByTwo_ShouldReturnFourDotOne() {
         Double firstNumber = 6.2D;
         Double secondNumber = 2D;
         Double expected = 4.1D;
@@ -88,7 +87,7 @@ public class SimpleMathTest {
 
     @Test
     @DisplayName("Test sqrt(9) = 3")
-    void testSquareRoot() {
+    void testSquareRoot_When_NumberIsNine_ShouldReturnThree() {
         Double number = 9D;
         Double expected = 3D;
         Double actual = math.squareRoot(number);
@@ -97,10 +96,13 @@ public class SimpleMathTest {
     }
 
     @Test
-    @Disabled("TODO: We still need to work on it")
     @DisplayName("Test division by zero")
     void testDivision_When_FirstNumberIdDividedByZero_ShouldThrowArithmeticException() {
-        fail();
+        Double firstNumber = 6.2D;
+        Double secondNumber = 0D;
+
+        assertThrows(ArithmeticException.class, () -> math.division(firstNumber, secondNumber),
+                () -> "Division by zero didn't throw ArithmeticException");
     }
 
 }
