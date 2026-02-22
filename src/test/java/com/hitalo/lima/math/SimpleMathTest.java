@@ -30,7 +30,8 @@ public class SimpleMathTest {
         Double actual = math.sum(firstNumber, secondNumber);
 
         // Then/Assert
-        assertEquals(expected, actual, () -> firstNumber + " + " + secondNumber + " didn't produced " + expected);
+        assertEquals(expected, actual, 0.0001,
+                () -> firstNumber + " + " + secondNumber + " didn't produced " + expected);
     }
 
     @Test
@@ -42,7 +43,8 @@ public class SimpleMathTest {
         Double expected = 4.2D;
         Double actual = math.subtraction(firstNumber, secondNumber);
 
-        assertEquals(expected, actual, () -> firstNumber + " - " + secondNumber + " didn't produced " + expected);
+        assertEquals(expected, actual, 0.0001,
+                () -> firstNumber + " - " + secondNumber + " didn't produced " + expected);
     }
 
     @Test
@@ -54,7 +56,8 @@ public class SimpleMathTest {
         Double expected = 12.4D;
         Double actual = math.multiplication(firstNumber, secondNumber);
 
-        assertEquals(expected, actual, () -> firstNumber + " * " + secondNumber + " didn't produced " + expected);
+        assertEquals(expected, actual, 0.0001,
+                () -> firstNumber + " * " + secondNumber + " didn't produced " + expected);
     }
 
     @Test
@@ -66,7 +69,8 @@ public class SimpleMathTest {
         Double expected = 3.1D;
         Double actual = math.division(firstNumber, secondNumber);
 
-        assertEquals(expected, actual, () -> firstNumber + " / " + secondNumber + " didn't produced " + expected);
+        assertEquals(expected, actual, 0.0001,
+                () -> firstNumber + " / " + secondNumber + " didn't produced " + expected);
     }
 
     @Test
@@ -78,7 +82,7 @@ public class SimpleMathTest {
         Double expected = 4.1D;
         Double actual = math.mean(firstNumber, secondNumber);
 
-        assertEquals(expected, actual,
+        assertEquals(expected, actual, 0.0001,
                 () -> "(" + firstNumber + " + " + secondNumber + ")/2 didn't produced " + expected);
     }
 
@@ -89,7 +93,7 @@ public class SimpleMathTest {
         Double expected = 3D;
         Double actual = math.squareRoot(number);
 
-        assertEquals(expected, actual, () -> "sqrt(" + number + ") didn't produced " + expected);
+        assertEquals(expected, actual, 0.0001, () -> "sqrt(" + number + ") didn't produced " + expected);
     }
 
     @Test
